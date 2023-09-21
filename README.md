@@ -5,10 +5,10 @@ Welcome to the "Staircase" challenge branch of my coding challenge repository!
 ## Challenge Description
 
 This challenge involves creating a staircase pattern using # symbols and spaces. For example, for a staircase of size n=4, it would look like this:
-  '#'
-  ##
- ###
-####
+   "#"
+  "##"
+ "###"
+"####"
 
 The last line is not preceded by any spaces. Your task is to write a program that prints a staircase of size n.
 
