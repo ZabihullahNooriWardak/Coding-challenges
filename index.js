@@ -1,31 +1,17 @@
 
-let myVar = "";
 
 function staircase(n) {
-    let counter = n - 1;
-
-    for (let i = 1; i < n.length + 1; i++) {
-        myVar = "";
-        for (let j = 0; j < counter.length; j++) {
-            myVar += " "
+    let stair = "";
+    for (let i = 0; i < n; i++) {
+        stair = "";
+        for (let j = 0; j < n; j++) {
+            if (j < n - i - 1) {
+                stair += " ";
+            } else {
+                stair += "#";
+            }
         }
-
-        for (p = i; p < n.length; p++) {
-            myVar += "#";
-        }
-        console.log(myVar);
-        counter--;
+        console.log(stair);
     }
 }
-staircase(5);
-
-// myVar+="#";
-// console.log(myVar)
-// myVar+="#";
-// console.log(myVar);
-/*
-   #
-  ##
- ###
-####
-*/
+staircase(4);
