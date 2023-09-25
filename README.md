@@ -1,20 +1,14 @@
-# Staircase Challenge
+# Mini Max sum Challenge
 
-Welcome to the "Staircase" challenge branch of my coding challenge repository!
+Welcome to the "Mini Max sum" challenge branch of my coding challenge repository!
 
 ## Challenge Description
 
-This challenge involves creating a staircase pattern using # symbols and spaces. For example, for a staircase of size n=4, it would look like this:
-   "#"
-  "##"
- "###"
-"####"
-
-The last line is not preceded by any spaces. Your task is to write a program that prints a staircase of size n.
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
 
 ## Solution
 
-[Solution is Available here ](https://github.com/ZabihullahNooriWardak/Coding-challenges/commit/18dc935f83e4db35cf30773147530cefa34bcaff)
+[Solution is Available here ](https://github.com/ZabihullahNooriWardak/Coding-challenges/commit/eef2a2fc578c98a43a07a68708da3442e509ea48)
 
 ## How to Use This Repository
 
