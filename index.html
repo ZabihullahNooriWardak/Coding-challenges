@@ -1,13 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <style>
+    /* This is the CSS code for styling the webpage */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+    }
+
+    .navbar a:hover {
+      background-color: #3E8E41;
+    }
+
+    .banner {
+      height: 400px;
+      background-image: url; /* This is the image from the screenshot */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner h1 {
+      color: white;
+      font-size: 48px;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .search {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search input {
+      width: 80%;
+      height: 40px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .search button {
+      width: 10%;
+      height: 40px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .search button:hover {
+      background-color: #3E8E41;
+    }
+
+    .loading {
+      height: 20px;
+      background-color: #ccc;
+    }
+  </style>
 </head>
 <body>
-  <h1>this is my home page</h1>
-  <h2>this is</h2>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Tutorials</a>
+    <a href="#">Ebooks</a>
+    <a href="#">Certifications</a>
+    <a href="#">About Us</a>
+  </div>
+  <div class="banner">
+    <h1>Simple Easy Learning at your fingertips</h1>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="Search for tutorials...">
+    <button>Search</button>
+  </div>
+  <div class="loading"></div>
 </body>
 <script src="index.js"></script>
 </html>
