@@ -1,14 +1,24 @@
-function miniMaxSum(arr) {
-    // Write your code here
- let sortedArray=   arr.sort((a,b)=>(a - b));
-   let totalMax=0;
-   for(let i=1;i<arr.length;i++){
-     totalMax+=arr[i];
-   }
-   let totalMin = 0;
-   for(let j=0;j<arr.length-1;j++){
-    totalMin+=arr[j];
-   }
-console.log(totalMin,totalMax);
+/*
+ * Complete the 'compareTriplets' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY a
+ *  2. INTEGER_ARRAY b
+ */
+
+function compareTriplets(a, b) {
+  let aliceScorre = 0;
+  let bobScore = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      aliceScorre++;
+    } else if (b[i] > a[i]) {
+      bobScore++;
+    }
+  }
+  // if(aliceScorre===0&&bobScore===0){
+  //   return [];
+  // }
+  return [aliceScorre, bobScore];
 }
-miniMaxSum([3,2,9,1,9])
