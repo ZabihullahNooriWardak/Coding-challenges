@@ -1,14 +1,14 @@
-# Mini Max sum Challenge
+# BreakingRecords Challenge
 
-Welcome to the "Mini Max sum" challenge branch of my coding challenge repository!
+Welcome to the "BreakingRecords" challenge branch of my coding challenge repository!
 
 ## Challenge Description
 
-Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+[challange description can be found here](https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem?isFullScreen=true)
 
 ## Solution
 
-[Solution is Available here ](https://github.com/ZabihullahNooriWardak/Coding-challenges/commit/eef2a2fc578c98a43a07a68708da3442e509ea48)
+[Solution is Available here ](https://github.com/ZabihullahNooriWardak/Coding-challenges)
 
 ## How to Use This Repository
 
