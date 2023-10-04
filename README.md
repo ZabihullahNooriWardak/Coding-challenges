@@ -8,8 +8,7 @@ Welcome to the "BreakingRecords" challenge branch of my coding challenge reposit
 
 ## Solution
 
-[Solution is Available here ](https://github.com/ZabihullahNooriWardak/Coding-challenges)
-
+Solution is available in index.js file of this repo.
 ## How to Use This Repository
 
 If you're interested in this specific challenge's solution, please follow these steps:
