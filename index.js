@@ -1,31 +1,15 @@
-class MyArray {
 
+//create a function that reverse a string 
+// 'zabih' should be : 
+// 'hibaz'
+function reverse(str){
+    let myArray = [];
+   for(let i =str.length-1; i>=0;i--){
+      myArray.push(str[i])
 
-    constructor() {
-        this.length = 0;
-        this.data = {};
-    }
-
-    get(index) {
-        return this.data[index]
-    }
-
-    push(item) {
-        this.data[this.length] = item
-        this.length++
-    }
-
-    pop() {
-        delete this.data[this.length - 1]
-        this.length--
-    }
+   }
+ 
+   return str;
 }
 
-
-let arr = new MyArray()
-arr.push("zabih")
-arr.push(2)
-arr.push("ali")
-console.log(arr.get(2)); 
-arr.pop()
-console.log(arr);
+console.log(reverse('ali')); 
