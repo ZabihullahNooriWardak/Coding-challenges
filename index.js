@@ -8,8 +8,11 @@ function reverse(str){
       myArray.push(str[i])
 
    }
- 
-   return str;
+ let newStr="";
+   for(let i=0;i<myArray.length;i++){
+   newStr+=myArray[i]
+   }
+  return newStr
 }
 
 console.log(reverse('ali')); 
