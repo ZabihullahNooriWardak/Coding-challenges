@@ -1,18 +1,7 @@
-
-//create a function that reverse a string 
-// 'zabih' should be : 
-// 'hibaz'
-function reverse(str){
-    let myArray = [];
-   for(let i =str.length-1; i>=0;i--){
-      myArray.push(str[i])
-
-   }
- let newStr="";
-   for(let i=0;i<myArray.length;i++){
-   newStr+=myArray[i]
-   }
-  return newStr
+function mergeSortArray(arr1,arr2){
+for(let i=0;i<arr2.length;i++){
+    arr1.push(arr2[i])
 }
-
-console.log(reverse('ali')); 
+return arr1
+}
+console.log(mergeSortArray([1,2,3,4],[2,3,5,8]));
