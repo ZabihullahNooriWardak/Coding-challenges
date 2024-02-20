@@ -37,4 +37,4 @@ function mergeSortArray(arr1, arr2) {
 
 }
 console.log(mergeSortArray([4, 5, 8, 33, 99], [3, 3, 4, 5, 8, 8, 8, 9, 9, 9, 98]));
-console.log(mergeSortArray([8, 9, 11], [9, 22, 23]));
+console.log(mergeSortArray([8, 9, 11], []));
