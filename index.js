@@ -10,8 +10,16 @@
 
 
 function firstRecurringCharacter(input) {
+    for (let i = 0; i < input.length; i++) {
+        for (let j = 0; j < input.length; j++) {
+            if (i !== j && input[i] === input[j]) {
+                return input[i]
+            }
+        }
+        return undefined
+    }
 }
-
+console.log(firstRecurringCharacter([2,1,1,2,3,5,1,2,4]));
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
 // return 5 because the pairs are before 2,2
