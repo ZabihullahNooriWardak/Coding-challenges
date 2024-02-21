@@ -11,16 +11,12 @@
 
 function firstRecurringCharacter(input) {
     let newUniqueValueArray = [];
-    let bool = true;
     for (let i = 0; i < input.length; i++) {
-        bool = true;
         let forCompare = input[i];
-
         if (newUniqueValueArray.includes(forCompare)) {
             return forCompare;
         } else {
             newUniqueValueArray.push(forCompare)
-            bool = false
         }
     }
     return undefined;
