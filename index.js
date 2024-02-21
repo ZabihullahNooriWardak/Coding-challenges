@@ -10,18 +10,24 @@
 
 
 function firstRecurringCharacter(input) {
- let map={}
- for(let i=0;i<input.length;i++){
-    if(map[input[i]]!== undefined){
-        return input[i]
-    }else {
-        map[input[i]]=true
-    }
- }
- return undefined;
+    let newUniqueValueArray = [];
+    let bool = true;
+    for (let i = 0; i < input.length; i++) {
+        bool = true;
+        let forCompare = input[i];
 
+        if (newUniqueValueArray.includes(forCompare)) {
+            return forCompare;
+        } else {
+            newUniqueValueArray.push(forCompare)
+            bool = false
+        }
+    }
+    return undefined;
 }
-console.log(firstRecurringCharacter([2,1,1,2,3,5,1,2,4]));
+
+console.log("here is the value:", firstRecurringCharacter([2,5,5,2,3,5,1,2,4]));
+
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
 // return 5 because the pairs are before 2,2
