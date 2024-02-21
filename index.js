@@ -1,39 +1,17 @@
-class HashTable {
-    constructor(size) {
-        this.n = 0 ;
-        this.data = new Array(size)
-    }
-    _hash(key) {
-        let hash = 0;
-        for (let i = 0; i < key.length; i++) {
-            hash = (hash + key.charCodeAt(i) * i) % this.data.length
-        }
-        return hash;
-    }   
-   
+//Google Question
+//Given an array = [2,5,1,2,3,5,1,2,4]:
+//It should return 2
 
-    set(key, value) {
-        // this.data.splice(this.n,0,[key, value]);
-        this.data[this.n]=[key,value];
-        this.n++;
-    }
+//Given an array = [2,1,1,2,3,5,1,2,4]:
+//It should return 1
 
-    get(key) {
-        for (let i = 0; i < this.data.length; i++) {
+//Given an array = [2,3,4,5]:
+//It should return undefined
 
-            if (key === this.data[i][0]) {
-                return this.data[i][1];
-            }
 
-        }
-
-        return "this key value could not be found"
-
-    }
+function firstRecurringCharacter(input) {
 }
 
-const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000);
-myHashTable.set('myName',"zabih")
-console.log(myHashTable.get('grapes')); 
-console.log(myHashTable.get("myName"));
+//Bonus... What if we had this:
+// [2,5,5,2,3,5,1,2,4]
+// return 5 because the pairs are before 2,2
