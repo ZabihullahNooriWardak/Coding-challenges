@@ -12,24 +12,41 @@
 //   }
 // };
 
+// class Node{
+//     constructor(value){
+//         this.value=value;
+//         this.next=null
+//     }
+// }
+
 class LinkedList {
     constructor(value) {
-      this.head = {
-        value: value,
-        next: null
-      };
-      this.tail = this.head;
-      this.length = 1;
+        this.head = {
+            value: value,
+            next: null
+        };
+        this.tail = this.head;
+        this.length = 1;
     }
     append(value) {
-      //Code here
+        let node = {
+            value: value,
+            next: null
+        }
+        this.tail.next = node;
+        this.tail = node;
+        this.length++;
+        return this;
+
     }
-  }
-  
-  let myLinkedList = new LinkedList(10);
-  myLinkedList.append(5);
-  myLinkedList.append(16);
-  
-  
-  
-  
+
+}
+
+
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+console.log(myLinkedList.append(16));
+//   console.log(myLinkedList);
+
+
+
