@@ -1,29 +1,35 @@
-//Google Question
-//Given an array = [2,5,1,2,3,5,1,2,4]:
-//It should return 2
+// Create the below linked list:
+// myLinkedList = {
+//   head: {
+//     value: 10
+//     next: {
+//       value: 5
+//       next: {
+//         value: 16
+//         next: null
+//       }
+//     }
+//   }
+// };
 
-//Given an array = [2,1,1,2,3,5,1,2,4]:
-//It should return 1
-
-//Given an array = [2,3,4,5]:
-//It should return undefined
-
-
-function firstRecurringCharacter(input) {
-    let newUniqueValueArray = [];
-    for (let i = 0; i < input.length; i++) {
-        let forCompare = input[i];
-        if (newUniqueValueArray.includes(forCompare)) {
-            return forCompare;
-        } else {
-            newUniqueValueArray.push(forCompare)
-        }
+class LinkedList {
+    constructor(value) {
+      this.head = {
+        value: value,
+        next: null
+      };
+      this.tail = this.head;
+      this.length = 1;
     }
-    return undefined;
-}
-
-console.log("here is the value:", firstRecurringCharacter([2,5,5,2,3,5,1,2,4]));
-
-//Bonus... What if we had this:
-// [2,5,5,2,3,5,1,2,4]
-// return 5 because the pairs are before 2,2
+    append(value) {
+      //Code here
+    }
+  }
+  
+  let myLinkedList = new LinkedList(10);
+  myLinkedList.append(5);
+  myLinkedList.append(16);
+  
+  
+  
+  
