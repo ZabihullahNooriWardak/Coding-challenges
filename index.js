@@ -39,6 +39,14 @@ class LinkedList {
         return this;
 
     }
+    prepend(value){
+      let node = {
+        value:value,
+        next:this.head
+      }
+      this.head=node
+      this.length++;
+    }
 
 }
 
