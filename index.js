@@ -1,7 +1,7 @@
 // add a method insert() to the linked list that adds a node to the specified index.
 
 class LinkedList {
-  constructor(value) {
+  constructor (value) {
     this.head = {
       value: value,
       next: null
@@ -40,35 +40,36 @@ class LinkedList {
     return array;
   }
   insert(index, value) {
-    //Code here
-    let node = {
-      value:value,
-      next:null
+    if (index >= this.length) {
+      return this.append(value)
     }
-    let i = 0;
-    let current = this.head;
-    while(i<=(index+1)){
-  
-      if(i===(index-1)){
-        current.next=node;
-        current=current.next;
-      }else if(i<(index-1)){
-      current=current.next
-      }else if(i===index){
-        current=current.next
+    let newNode = {
+      value: value,
+      next: null
+    }
+    if (index === 0) {
+      return this.prepend(value)
+    } else {
+      let current = this.head;
+      let i = 0;
+      while (i < (index - 1)) {
+        current = current.next
+        i++
       }
-      i++;
+      newNode.next = current.next;
+current.next=newNode;
     }
-
+    this.length++;
     return this.printList();
   }
 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
-myLinkedList.append(16); myLinkedList.prepend(1)
+myLinkedList.append(16);
+ myLinkedList.prepend(1);
 myLinkedList.insert(2, 99)
 myLinkedList.insert(20, 88)
-
+console.log(myLinkedList);
 
 
