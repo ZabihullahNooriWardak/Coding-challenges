@@ -47,15 +47,15 @@ class LinkedList {
     }
     let i = 0;
     let current = this.head;
-    while(i<=(index)){
+    while(i<=(index+1)){
   
       if(i===(index-1)){
         current.next=node;
-
+        current=current.next;
       }else if(i<(index-1)){
       current=current.next
       }else if(i===index){
-        
+        current=current.next
       }
       i++;
     }
