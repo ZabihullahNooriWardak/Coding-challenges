@@ -62,6 +62,15 @@ current.next=newNode;
     this.length++;
     return this.printList();
   }
+
+  remove(index){
+    current=this.head;
+    let counter =0;
+    while(counter<index){
+  current=current.next;
+  counter++;
+    }
+  }
 }
 
 let myLinkedList = new LinkedList(10);
