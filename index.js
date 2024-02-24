@@ -29,6 +29,7 @@ class LinkedList {
     }
     newNode.next = this.head;
     this.head = newNode;
+    this.head.previous=newNode
     this.length++;
     return this;
   }
@@ -50,11 +51,14 @@ class LinkedList {
     
     const newNode = {
       value: value,
-      next: null
+      next: null,
+      previous:null
     }
     const leader = this.traverseToIndex(index-1);
     const holdingPointer = leader.next;
     leader.next = newNode;
+    newNode.previous=leader;
+    holdingPointer.previous=newNode;
     newNode.next = holdingPointer;
     this.length++;
     return this.printList();
@@ -74,6 +78,7 @@ class LinkedList {
     const leader = this.traverseToIndex(index-1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
+    unwantedNode.next.previous=leader;
     this.length--;
     return this.printList();
   }
