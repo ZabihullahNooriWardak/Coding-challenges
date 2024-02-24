@@ -67,6 +67,11 @@ class LinkedList {
     if (index >= this.length || index < 0) {
       throw new Error("index out of bund")
     }
+    if(index===0){
+          this.head=this.head.next
+          this.length--;
+          return;
+    }
     
     let current = this.head;
     let counter = 0;
@@ -83,15 +88,16 @@ class LinkedList {
   }
 }
 
-let myLinkedList = new LinkedList(10);
-myLinkedList.prepend(5)
-myLinkedList.append(20);
+let myLinkedList = new LinkedList(5);
+
+myLinkedList.append(10);
+myLinkedList.append(20)
 myLinkedList.append(30)
 myLinkedList.append(40)
-myLinkedList.insert(5,50)
-myLinkedList.remove(3)
-myLinkedList.remove(2)
-myLinkedList.remove(3)
+myLinkedList.append(50)
+myLinkedList.append(60)
+myLinkedList.append(70)
+
 
 console.log(myLinkedList.printList());
 
