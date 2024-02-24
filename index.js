@@ -1,21 +1,20 @@
-// add a method remove() to the linked list that deletes a node to the specified index.
+// add a method reverse() to the linked list that reverses the entire list of nodes
 
 class LinkedList {
   constructor(value) {
-    this.head = {
-      value: value,
-      next: null,
-      previous: null
-    };
-    this.tail = this.head;
-    this.length = 1;
+      this.head = {
+          value: value,
+          next: null
+      };
+      this.tail = this.head;
+      this.length = 1;
   }
   append(value) {
     const newNode = {
       value: value,
-      next: null,
-      previous:this.tail
+      next: null
     }
+    console.log(newNode)
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -24,12 +23,10 @@ class LinkedList {
   prepend(value) {
     const newNode = {
       value: value,
-      next: this.head,
-      previous:null
+      next: null
     }
     newNode.next = this.head;
     this.head = newNode;
-    this.head.previous=newNode
     this.length++;
     return this;
   }
@@ -51,14 +48,11 @@ class LinkedList {
     
     const newNode = {
       value: value,
-      next: null,
-      previous:null
+      next: null
     }
     const leader = this.traverseToIndex(index-1);
     const holdingPointer = leader.next;
     leader.next = newNode;
-    newNode.previous=leader;
-    holdingPointer.previous=newNode;
     newNode.next = holdingPointer;
     this.length++;
     return this.printList();
@@ -78,19 +72,25 @@ class LinkedList {
     const leader = this.traverseToIndex(index-1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
-    unwantedNode.next.previous=leader;
     this.length--;
+    return this.printList();
+  }
+  reverse() {
+      //Code Here
     return this.printList();
   }
 }
 
 let myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.insert(2, 99);
-myLinkedList.insert(20, 88);
-myLinkedList.remove(2);
+myLinkedList.append(5)
+myLinkedList.append(16)
+myLinkedList.prepend(1)
+myLinkedList.printList()
+myLinkedList.insert(2, 99)
+myLinkedList.insert(20, 88)
+myLinkedList.printList()
+myLinkedList.remove(2)
+myLinkedList.reverse()
 
 
 
