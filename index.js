@@ -1,7 +1,7 @@
-// add a method insert() to the linked list that adds a node to the specified index.
+// add a method remove() to the linked list that deletes a node to the specified index.
 
 class LinkedList {
-  constructor (value) {
+  constructor(value) {
     this.head = {
       value: value,
       next: null
@@ -23,7 +23,6 @@ class LinkedList {
     const newNode = {
       value: value,
       next: null
-
     }
     newNode.next = this.head;
     this.head = newNode;
@@ -33,72 +32,56 @@ class LinkedList {
   printList() {
     const array = [];
     let currentNode = this.head;
-    while (currentNode !== null) {
-      array.push(currentNode.value)
-      currentNode = currentNode.next
+    while(currentNode !== null){
+        array.push(currentNode.value)
+        currentNode = currentNode.next
     }
     return array;
   }
-  insert(index, value) {
-    if (index >= this.length) {
-      return this.append(value)
+  insert(index, value){
+    //Check for proper parameters;
+    if(index >= this.length) {
+      console.log('yes')
+      return this.append(value);
     }
-    let newNode = {
+    
+    const newNode = {
       value: value,
       next: null
     }
-    if (index === 0) {
-      return this.prepend(value)
-    } else {
-      let current = this.head;
-      let i = 0;
-      while (i < (index - 1)) {
-        current = current.next
-        i++
-      }
-      newNode.next = current.next;
-      current.next = newNode;
-    }
+    const leader = this.traverseToIndex(index-1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
     this.length++;
     return this.printList();
   }
-
-  remove(index) {
-    if (index >= this.length || index < 0) {
-      throw new Error("index out of bund")
-    }
-    if(index===0){
-          this.head=this.head.next
-          this.length--;
-          return;
-    }
-    
-    let current = this.head;
+  traverseToIndex(index) {
+    //Check parameters
     let counter = 0;
-   
-    while (counter < index-1) {
-      current = current.next;
+    let currentNode = this.head;
+    while(counter !== index){
+      currentNode = currentNode.next;
       counter++;
     }
-    let beforTheTarget = current;
-    let target = current.next
-    let afterTheTarget = target.next
-    beforTheTarget.next = afterTheTarget;
+    return currentNode;
+  }
+  remove(index) {
+    // Check Parameters      
+    const leader = this.traverseToIndex(index-1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
     this.length--;
+    return this.printList();
   }
 }
 
-let myLinkedList = new LinkedList(5);
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);myLinkedList.prepend(1);
+myLinkedList.insert(2, 99);
+myLinkedList.insert(20, 88);
+myLinkedList.remove(2);
 
-myLinkedList.append(10);
-myLinkedList.append(20)
-myLinkedList.append(30)
-myLinkedList.append(40)
-myLinkedList.append(50)
-myLinkedList.append(60)
-myLinkedList.append(70)
-
-
-console.log(myLinkedList.printList());
 
 
