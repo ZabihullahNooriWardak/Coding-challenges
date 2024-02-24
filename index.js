@@ -57,28 +57,42 @@ class LinkedList {
         i++
       }
       newNode.next = current.next;
-current.next=newNode;
+      current.next = newNode;
     }
     this.length++;
     return this.printList();
   }
 
-  remove(index){
-    current=this.head;
-    let counter =0;
-    while(counter<index){
-  current=current.next;
-  counter++;
+  remove(index) {
+    if (index >= this.length || index < 0) {
+      throw new Error("index out of bund")
     }
+    
+    let current = this.head;
+    let counter = 0;
+   
+    while (counter < index-1) {
+      current = current.next;
+      counter++;
+    }
+    let beforTheTarget = current;
+    let target = current.next
+    let afterTheTarget = target.next
+    beforTheTarget.next = afterTheTarget;
+    this.length--;
   }
 }
 
 let myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
- myLinkedList.prepend(1);
-myLinkedList.insert(2, 99)
-myLinkedList.insert(20, 88)
-console.log(myLinkedList);
+myLinkedList.prepend(5)
+myLinkedList.append(20);
+myLinkedList.append(30)
+myLinkedList.append(40)
+myLinkedList.insert(5,50)
+myLinkedList.remove(3)
+myLinkedList.remove(2)
+myLinkedList.remove(3)
+
+console.log(myLinkedList.printList());
 
 
