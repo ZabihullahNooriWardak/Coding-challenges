@@ -1,13 +1,13 @@
 // add a method reverse() to the linked list that reverses the entire list of nodes
 
 class LinkedList {
-  constructor(value) {
-      this.head = {
-          value: value,
-          next: null
-      };
-      this.tail = this.head;
-      this.length = 1;
+  constructor (value) {
+    this.head = {
+      value: value,
+      next: null
+    };
+    this.tail = this.head;
+    this.length = 1;
   }
   append(value) {
     const newNode = {
@@ -33,24 +33,24 @@ class LinkedList {
   printList() {
     const array = [];
     let currentNode = this.head;
-    while(currentNode !== null){
-        array.push(currentNode.value)
-        currentNode = currentNode.next
+    while (currentNode !== null) {
+      array.push(currentNode.value)
+      currentNode = currentNode.next
     }
     return array;
   }
-  insert(index, value){
+  insert(index, value) {
     //Check for proper parameters;
-    if(index >= this.length) {
+    if (index >= this.length) {
       console.log('yes')
       return this.append(value);
     }
-    
+
     const newNode = {
       value: value,
       next: null
     }
-    const leader = this.traverseToIndex(index-1);
+    const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
@@ -61,7 +61,7 @@ class LinkedList {
     //Check parameters
     let counter = 0;
     let currentNode = this.head;
-    while(counter !== index){
+    while (counter !== index) {
       currentNode = currentNode.next;
       counter++;
     }
@@ -69,29 +69,27 @@ class LinkedList {
   }
   remove(index) {
     // Check Parameters      
-    const leader = this.traverseToIndex(index-1);
+    const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
     this.length--;
     return this.printList();
   }
   reverse() {
-     if(!this.head.next){
+    if (!this.head.next) {
       return this.head
-     }                                     //   1-->2-->3-->4-->5-->6-->7-->8
-     let first = this.head;
-     this.tail=this.head;
-     let second = first.next;
-     while(second){
-      const temp = second.next;
-      second.next=first;
-      first=second;
-      second=temp;
-     }
-     this.head.next=null;
-     this.head=first
-
-     
+    }                                     //   1-->2-->3-->4-->5-->6-->7-->8
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      const thirdOrTemp = second.next;
+      second.next = first;
+      first = second;
+      second = thirdOrTemp;
+    }
+    this.head.next = null;
+    this.head = first
     return this.printList();
   }
 }
