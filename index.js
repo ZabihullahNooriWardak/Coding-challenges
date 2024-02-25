@@ -76,7 +76,8 @@ class LinkedList {
     return this.printList();
   }
   reverse() {
-      //Code Here
+     
+     
     return this.printList();
   }
 }
@@ -90,7 +91,7 @@ myLinkedList.insert(2, 99)
 myLinkedList.insert(20, 88)
 myLinkedList.printList()
 myLinkedList.remove(2)
-myLinkedList.reverse()
+// myLinkedList.reverse()
 
 
 
