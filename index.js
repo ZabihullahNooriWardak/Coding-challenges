@@ -76,7 +76,9 @@ class LinkedList {
     return this.printList();
   }
   reverse() {
-     
+     if(!this.head.next){
+      return this.head
+     }
      
     return this.printList();
   }
