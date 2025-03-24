@@ -1,4 +1,7 @@
-void main() {}
+void main() {
+  var lst = [3, 8, 2, 4, 6, 4, 3];
+  print(removeDuplicate(lst));
+}
 
 List removeDuplicate(List lst) {
   List newList = [];
@@ -12,7 +15,9 @@ List removeDuplicate(List lst) {
       }
     }
     if (!isDuplicate) {
-      newList[newList.length] = item;
+      // Manually increase the size of the list
+      newList.length += 1;
+      newList[newList.length - 1] = item;
     }
   }
   return newList;
