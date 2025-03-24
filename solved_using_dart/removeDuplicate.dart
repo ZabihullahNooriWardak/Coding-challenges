@@ -2,12 +2,17 @@ void main() {}
 
 List removeDuplicate(List lst) {
   List newList = [];
-  for (int i = 0; i < lst.length; i++) {
-    for (int j = 0; j <= newList.length; j++) {
-      if (lst[i] == newList[j]) {
+
+  for (final item in lst) {
+    bool isDuplicate = false;
+    for (final newItem in newList) {
+      if (item == newItem) {
+        isDuplicate = true;
         break;
       }
-      newList[newList.length] = lst[i];
+    }
+    if (!isDuplicate) {
+      newList[newList.length] = item;
     }
   }
   return newList;
