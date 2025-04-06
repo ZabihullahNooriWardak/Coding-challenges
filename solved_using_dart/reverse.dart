@@ -2,9 +2,9 @@ int reverseNumber(int num) {
   int reversed = 0;
 
   while (num != 0) {
-    int digit = num % 10;  // Extract last digit
-    reversed = reversed * 10 + digit;  // Append digit to reversed number
-    num ~/= 10;  // Remove last digit from original number
+    int digit = num % 10; 
+    reversed = reversed * 10 + digit;  
+    num ~/= 10;  
   }
 
   return reversed;
@@ -12,5 +12,5 @@ int reverseNumber(int num) {
 
 void main() {
   int num = 12345;
-  print(reverseNumber(num));  // Output: 54321
+  print(reverseNumber(num));  
 }
