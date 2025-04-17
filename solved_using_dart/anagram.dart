@@ -1,4 +1,8 @@
-void main() {}
+void main() {
+  print(isAnagram('listen', 'silent'));
+  print(isAnagram('evil', 'vile'));
+  print(isAnagram('evil', 'vild'));
+}
 //What is the challange ?
 /* 
 In other words, two strings are considered anagrams
@@ -17,6 +21,9 @@ bool isAnagram(String str1, String str2) {
   String character2 = '';
   int counter1 = 0;
   int counter2 = 0;
+  if (str1.length != str2.length) {
+    return false;
+  }
   for (int i = 0; i < str1.length; i++) {
     character1 = str1[i];
     counter1 = 0;
