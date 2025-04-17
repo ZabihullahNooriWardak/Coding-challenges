@@ -15,7 +15,7 @@ In other words, two strings are considered anagrams
 // my Algorithm steps 
 
 // first we can check the length of both string 
-// we should check sigle character of a string that is it in another string  and number of occurence
+// we should check sigle character of a string and compare it with  another string  and number of occurence of each character
 // and then check the number of occurence 
 bool isAnagram(){
 
