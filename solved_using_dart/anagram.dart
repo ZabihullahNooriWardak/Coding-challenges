@@ -1,7 +1,12 @@
 void main() {
-  print(isAnagram('listen', 'silent'));
-  print(isAnagram('evil', 'vile'));
-  print(isAnagram('a', 'b'));
+  // print(isAnagram('listen', 'silent'));
+  // print(isAnagram('evil', 'vile'));
+  // print(isAnagram('a', 'b'));
+
+  var map = {'a': 3, 'b': "3333"};
+  print(map['a']);
+  print(map['d']);
+  print(isAnagram('abb', 'baa'));
 }
 //What is the challange ?
 /* 
@@ -52,3 +57,14 @@ bool isAnagram(String str1, String str2) {
 
   return true;
 }
+
+// bool isAnagram(String str1, String str2) {
+//   var firstMap = {};
+//   if (str1.length != str2.length) {
+//     return false;
+//   }
+//   for (int i = 0; i < str1.length;i++){
+ 
+//   }
+//    return false;
+// }
