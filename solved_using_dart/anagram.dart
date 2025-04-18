@@ -1,7 +1,7 @@
 void main() {
   print(isAnagram('listen', 'silent'));
   print(isAnagram('evil', 'vile'));
-  print(isAnagram('evil', 'vild'));
+  print(isAnagram('a', 'b'));
 }
 //What is the challange ?
 /* 
