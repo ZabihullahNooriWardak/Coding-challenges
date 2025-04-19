@@ -1,7 +1,4 @@
-
-
 // 2563. Count the Number of Fair Pairs  (Medium Level Leet code challange )
-
 
 // Given a 0-indexed integer array nums of size n and two integers lower and upper, return the number of fair pairs.
 
@@ -9,7 +6,6 @@
 
 // 0 <= i < j < n, and
 // lower <= nums[i] + nums[j] <= upper
- 
 
 // Example 1:
 
@@ -21,10 +17,11 @@
 // Input: nums = [1,7,9,2,5], lower = 11, upper = 11
 // Output: 1
 // Explanation: There is a single fair pair: (2,3).
- 
 
+void main() {}
 
+int countFairPairs(List<int> nums, int lower, int upper) {
 
-void main(){
-
+  
+  return 0;
 }
