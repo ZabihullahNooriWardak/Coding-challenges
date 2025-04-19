@@ -21,7 +21,19 @@
 void main() {}
 
 int countFairPairs(List<int> nums, int lower, int upper) {
-
-  
-  return 0;
+  var counter = 0;
+  var value = 0;
+  for (int i = 0; i < nums.length; i++) {
+    value = nums[i];
+    for (int j = 0; j < nums.length; j++) {
+      if (i == j) {
+        continue;
+      }
+      var total = value + nums[j];
+      if (total >= lower && total <= upper) {
+        counter++;
+      }
+    }
+  }
+  return counter;
 }
