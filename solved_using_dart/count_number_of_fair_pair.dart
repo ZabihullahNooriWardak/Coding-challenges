@@ -18,19 +18,18 @@
 // Output: 1
 // Explanation: There is a single fair pair: (2,3).
 
-void main() {}
+void main() {
+  print(countFairPairs([0, 1, 7, 4, 4, 5], 3, 6));
+}
 
 int countFairPairs(List<int> nums, int lower, int upper) {
   var counter = 0;
   var value = 0;
   for (int i = 0; i < nums.length; i++) {
     value = nums[i];
-    for (int j = 0; j < nums.length; j++) {
-      if (i == j) {
-        continue;
-      }
+    for (int j = i; j < nums.length; j++) {
       var total = value + nums[j];
-      if (total >= lower && total <= upper) {
+      if (total >= lower && total <= upper && i != j) {
         counter++;
       }
     }
