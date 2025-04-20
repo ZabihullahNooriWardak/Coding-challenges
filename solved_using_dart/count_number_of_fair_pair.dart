@@ -22,7 +22,7 @@ void main() {
   print(countFairPairs([0, 1, 7, 4, 4, 5], 3, 6));
   print(countFairPairs([1, 7, 9, 2, 5], 11, 11));
 }
-
+// time complexity of my solution is o(n^2)
 int countFairPairs(List<int> nums, int lower, int upper) {
   var counter = 0;
   var value = 0;
