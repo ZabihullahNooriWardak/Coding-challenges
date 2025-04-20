@@ -1,4 +1,8 @@
-void main() {}
+void main() {
+  var x = Car(name: "corolla", modal: 2005).getModal();
+  // print(x.modal);
+  print(x);
+}
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
 
@@ -21,4 +25,26 @@ void main() {}
 
 int numRabbits(List<int> answers) {
   return 0;
+}
+
+class Car {
+  String name;
+  int modal;
+  Car({required this.name, required this.modal});
+
+  void get getName {
+    this.name;
+  }
+
+  void setName(String name) {
+    this.name = name;
+  }
+
+  int getModal() {
+    return this.modal;
+  }
+
+  void setModal(int modal) {
+    this.modal = modal;
+  }
 }
