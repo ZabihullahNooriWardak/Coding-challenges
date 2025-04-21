@@ -1,7 +1,10 @@
 void main() {
-  var x = Car(name: "corolla", modal: 2005).getModal();
-  // print(x.modal);
+  var x = Car(name: "corolla", modal: 2005)..getModal();
+  print(x.modal);
   print(x);
+  var lst = [3, 4, 2, 5, 22];
+  lst[0] = 0;
+  print(lst);
 }
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
