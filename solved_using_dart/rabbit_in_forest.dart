@@ -26,6 +26,11 @@ void main() {
 // Input: answers = [10,10,10]
 // Output: 11
 
+
+
+//Algorithm 
+//  
+
 int numRabbits(List<int> answers) {
   return 0;
 }
