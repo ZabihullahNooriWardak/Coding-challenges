@@ -26,12 +26,22 @@ void main() {
 // Input: answers = [10,10,10]
 // Output: 11
 
-
-
-//Algorithm 
-//  
+//Algorithm
+//
 
 int numRabbits(List<int> answers) {
+  int rabbit = 0;
+  int element = answers[0];
+  int elementCounter = 1;
+  for (int i = 1; i < answers.length; i++) {
+    if (element == answers[i]) {
+      elementCounter++;
+      if (elementCounter == element + 1) {
+        rabbit += elementCounter;
+        elementCounter = 1;
+      }
+    }
+  }
   return 0;
 }
 
