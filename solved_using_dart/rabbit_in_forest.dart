@@ -30,16 +30,20 @@ void main() {
 //
 
 int numRabbits(List<int> answers) {
+  answers.sort();
   int rabbit = 0;
   int element = answers[0];
   int elementCounter = 1;
   for (int i = 1; i < answers.length; i++) {
+    if (element != answers[i]) {}
     if (element == answers[i]) {
       elementCounter++;
       if (elementCounter == element + 1) {
         rabbit += elementCounter;
         elementCounter = 1;
       }
+    } else {
+      element = answers[i];
     }
   }
   return 0;
@@ -66,3 +70,5 @@ class Car {
     this.modal = modal;
   }
 }
+
+int numRabbitts(List<int> answers) {}
