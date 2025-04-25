@@ -1,10 +1,12 @@
 void main() {
-  var x = Car(name: "corolla", modal: 2005)..getModal();
-  print(x.modal);
-  print(x);
-  var lst = [3, 4, 2, 5, 22];
-  lst[0] = 0;
-  print(lst);
+  // var x = Car(name: "corolla", modal: 2005)..getModal();
+  // print(x.modal);
+  // print(x);
+  // var lst = [3, 4, 2, 5, 22];
+  // lst[0] = 0;
+  // print(lst);
+
+  print(numRabbits([1, 1, 2]));
 }
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
@@ -30,23 +32,36 @@ void main() {
 //
 
 int numRabbits(List<int> answers) {
+  if (answers.length == 0) {
+    return 0;
+  }
+  if (answers.length == 1) {
+    return answers[0] + 1;
+  }
+  // i don't know if we are given sorted or unsorted array therefore i must make sure it is sorted first
   answers.sort();
   int rabbit = 0;
   int element = answers[0];
   int elementCounter = 1;
   for (int i = 1; i < answers.length; i++) {
-    if (element != answers[i]) {}
+    if (element != answers[i]) {
+      rabbit += element + 1;
+      element = answers[i];
+      continue;
+    }
     if (element == answers[i]) {
       elementCounter++;
+      element = answers[i];
       if (elementCounter == element + 1) {
         rabbit += elementCounter;
         elementCounter = 1;
       }
-    } else {
-      element = answers[i];
     }
+    // else {
+    //   element = answers[i];
+    // }
   }
-  return 0;
+  return rabbit;
 }
 
 class Car {
@@ -71,4 +86,6 @@ class Car {
   }
 }
 
-int numRabbitts(List<int> answers) {}
+// int numRabbitts(List<int> answers) {
+//   return 0;
+// }
