@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 void main() {
   // var x = Car(name: "corolla", modal: 2005)..getModal();
   // print(x.modal);
@@ -46,15 +48,20 @@ int numRabbits(List<int> answers) {
   for (int i = 1; i < answers.length; i++) {
     if (element != answers[i]) {
       rabbit += element + 1;
-      element = answers[i];
+      if (i < answers.length - 1) {
+        element = answers[i + 1];
+      }
       continue;
     }
     if (element == answers[i]) {
       elementCounter++;
-      element = answers[i];
+
       if (elementCounter == element + 1) {
         rabbit += elementCounter;
         elementCounter = 1;
+      }
+      if (i < answers.length - 1) {
+        element = answers[i + 1];
       }
     }
     // else {
@@ -86,6 +93,20 @@ class Car {
   }
 }
 
-// int numRabbitts(List<int> answers) {
-//   return 0;
-// }
+int numRabbitts(List<int> answers) {
+  var previousElement = answers[0];
+  var rabbitNumber = 0;
+  var elementCounter = 1;
+  for (int i = 1; i < answers.length; i++) {
+    if (previousElement == answers[i]) {
+      rabbitNumber += previousElement + 1;
+      elementCounter++;
+      previousElement = answers[i];
+    } else {
+      rabbitNumber += previousElement + 1;
+      elementCounter = 1;
+      previousElement = answers[i];
+    }
+  }
+  return 0;
+}
