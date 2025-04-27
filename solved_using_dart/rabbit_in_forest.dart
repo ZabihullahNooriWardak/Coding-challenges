@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 void main() {
   // var x = Car(name: "corolla", modal: 2005)..getModal();
   // print(x.modal);
@@ -109,4 +107,19 @@ int numRabbitts(List<int> answers) {
     }
   }
   return 0;
+}
+
+int another(List<int> answers) {
+  return 0;
+}
+
+//singlethone pattern learning
+
+class MyService {
+  MyService._privateConstructor();
+
+  static final MyService instance = MyService._privateConstructor();
+  void doSomething() {
+    print("doing something .");
+  }
 }
