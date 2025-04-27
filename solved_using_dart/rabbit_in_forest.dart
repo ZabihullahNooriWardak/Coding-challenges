@@ -6,6 +6,7 @@ void main() {
   // lst[0] = 0;
   // print(lst);
 
+  MyService m = MyService();ye
   print(numRabbits([1, 1, 2]));
 }
 
@@ -117,9 +118,24 @@ int another(List<int> answers) {
 
 class MyService {
   MyService._privateConstructor();
-
+  MyService();
   static final MyService instance = MyService._privateConstructor();
   void doSomething() {
     print("doing something .");
+  }
+}
+
+
+// singleton with lazy initialization 
+
+class LazyService {
+  LazyService._();
+  static LazyService? _instance ;
+  static LazyService get instance{
+    _instance??LazyService._();
+    return _instance!;
+  }
+  void doSomething(){
+    print("doing ...");
   }
 }
