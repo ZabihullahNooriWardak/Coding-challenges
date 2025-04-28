@@ -6,7 +6,7 @@ void main() {
   // lst[0] = 0;
   // print(lst);
 
-  MyService m = MyService();ye
+  MyService m = MyService();
   print(numRabbits([1, 1, 2]));
 }
 
@@ -99,9 +99,8 @@ int numRabbitts(List<int> answers) {
   for (int i = 1; i < answers.length; i++) {
     if (previousElement == answers[i]) {
       elementCounter++;
-      if(elementCounter==previousElement+1){
-      rabbitNumber += previousElement + 1;
-
+      if (elementCounter == previousElement + 1) {
+        rabbitNumber += previousElement + 1;
       }
       previousElement = answers[i];
     } else {
@@ -128,17 +127,33 @@ class MyService {
   }
 }
 
-
-// singleton with lazy initialization 
+// singleton with lazy initialization
 
 class LazyService {
   LazyService._();
-  static LazyService? _instance ;
-  static LazyService get instance{
-    _instance??LazyService._();
+  static LazyService? _instance;
+  static LazyService get instance {
+    _instance ?? LazyService._();
     return _instance!;
   }
-  void doSomething(){
+
+  void doSomething() {
     print("doing ...");
   }
+}
+
+int rabbitLastTry(List<int> rabbitAnswers) {
+  int element = rabbitAnswers[0];
+  int counter = 0;
+  int elementCounter = 1;
+  for (int i = 1; i < rabbitAnswers.length; i++) {
+    if (element != rabbitAnswers[i]) {
+
+
+
+    } else {
+
+    }
+  }
+  return 0;
 }
