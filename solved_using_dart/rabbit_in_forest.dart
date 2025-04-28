@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 void main() {
   // var x = Car(name: "corolla", modal: 2005)..getModal();
   // print(x.modal);
@@ -8,6 +6,7 @@ void main() {
   // lst[0] = 0;
   // print(lst);
 
+  MyService m = MyService();ye
   print(numRabbits([1, 1, 2]));
 }
 
@@ -112,4 +111,34 @@ int numRabbitts(List<int> answers) {
     }
   }
   return 0;
+}
+
+int another(List<int> answers) {
+  return 0;
+}
+
+//singlethone pattern learning
+
+class MyService {
+  MyService._privateConstructor();
+  MyService();
+  static final MyService instance = MyService._privateConstructor();
+  void doSomething() {
+    print("doing something .");
+  }
+}
+
+
+// singleton with lazy initialization 
+
+class LazyService {
+  LazyService._();
+  static LazyService? _instance ;
+  static LazyService get instance{
+    _instance??LazyService._();
+    return _instance!;
+  }
+  void doSomething(){
+    print("doing ...");
+  }
 }
