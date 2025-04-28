@@ -99,8 +99,11 @@ int numRabbitts(List<int> answers) {
   var elementCounter = 1;
   for (int i = 1; i < answers.length; i++) {
     if (previousElement == answers[i]) {
-      rabbitNumber += previousElement + 1;
       elementCounter++;
+      if(elementCounter==previousElement+1){
+      rabbitNumber += previousElement + 1;
+
+      }
       previousElement = answers[i];
     } else {
       rabbitNumber += previousElement + 1;
