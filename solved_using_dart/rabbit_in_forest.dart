@@ -7,7 +7,7 @@ void main() {
   // print(lst);
 
   MyService m = MyService();
-  print(numRabbits([1, 1, 2]));
+  print(numRabbits([2, 1, 3]));
 }
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
@@ -46,8 +46,8 @@ int numRabbits(List<int> answers) {
   int elementCounter = 1;
   for (int i = 1; i < answers.length; i++) {
     if (element != answers[i]) {
-      rabbit += element + 1;
-      if (i < answers.length - 1) {
+      rabbit += (element + 1);
+      if (i < answers.length - 2) {
         element = answers[i + 1];
       }
       continue;
@@ -59,7 +59,7 @@ int numRabbits(List<int> answers) {
         rabbit += elementCounter;
         elementCounter = 1;
       }
-      if (i < answers.length - 1) {
+      if (i < answers.length) {
         element = answers[i + 1];
       }
     }
@@ -148,12 +148,13 @@ int rabbitLastTry(List<int> rabbitAnswers) {
   int elementCounter = 1;
   for (int i = 1; i < rabbitAnswers.length; i++) {
     if (element != rabbitAnswers[i]) {
-
-
-
-    } else {
-
-    }
+    } else {}
   }
+  return 0;
+}
+
+int anotherTry(List<int> answers) {
+  int counter = 0;
+  for (int i = 0; i < answers.length; i++) {}
   return 0;
 }
