@@ -7,7 +7,7 @@ void main() {
   // print(lst);
 
   MyService m = MyService();
-  print(numRabbits([2, 1, 3]));
+  print(numOfRabbits([2, 1, 3]));
 }
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
@@ -48,7 +48,7 @@ int numRabbits(List<int> answers) {
     if (element != answers[i]) {
       rabbit += (element + 1);
       if (i < answers.length - 2) {
-        element = answers[i + 1];
+        element = answers[i];
       }
       continue;
     }
@@ -59,9 +59,9 @@ int numRabbits(List<int> answers) {
         rabbit += elementCounter;
         elementCounter = 1;
       }
-      if (i < answers.length) {
-        element = answers[i + 1];
-      }
+      // if (i < answers.length) {
+      //   element = answers[i + 1];
+      // }
     }
     // else {
     //   element = answers[i];
@@ -157,4 +157,22 @@ int anotherTry(List<int> answers) {
   int counter = 0;
   for (int i = 0; i < answers.length; i++) {}
   return 0;
+}
+
+int numOfRabbits(List<int> answers) {
+  Map<int, int> freq = {};
+
+  for (var ans in answers) {
+    freq[ans] = (freq[ans] ?? 0) + 1;
+  }
+
+  int rabbits = 0;
+  freq.forEach((answer, count) {
+    int groupSize = answer + 1;
+    int groups =
+        (count / groupSize).ceil(); // even if partial group, we need full space
+    rabbits += groups * groupSize;
+  });
+
+  return rabbits;
 }
