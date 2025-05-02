@@ -5,9 +5,12 @@ void main() {
   // var lst = [3, 4, 2, 5, 22];
   // lst[0] = 0;
   // print(lst);
+  var m = {"a": 3,"b":4,"a":89};
+  print(m["b"]);
+  print(m["a"]);
 
-  MyService m = MyService();
-  print(numOfRabbits([2, 1, 3]));
+  MyService md = MyService();
+  // print(numOfRabbits([2, 1, 3]));
 }
 
 // There is a forest with an unknown number of rabbits. We asked n rabbits "How many rabbits have the same color as you?" and collected the answers in an integer array answers where answers[i] is the answer of the ith rabbit.
