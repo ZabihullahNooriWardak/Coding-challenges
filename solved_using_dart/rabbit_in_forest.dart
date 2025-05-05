@@ -5,11 +5,13 @@ void main() {
   // var lst = [3, 4, 2, 5, 22];
   // lst[0] = 0;
   // print(lst);
-  var m = {"a": 3,"b":4,"a":89};
-  print(m["b"]);
-  print(m["a"]);
-
-  MyService md = MyService();
+  // var m = {"a": 3, "b": 4, "a": 89};
+  // print(m["b"]);
+  // print(m["a"]);
+  // print(m);
+  var x = rabbit([2, 2, 3]);
+  print(x);
+  // MyService md = MyService();
   // print(numOfRabbits([2, 1, 3]));
 }
 
@@ -178,4 +180,25 @@ int numOfRabbits(List<int> answers) {
   });
 
   return rabbits;
+}
+
+int rabbit(List<int> answers) {
+  Map myMap = {};
+  for (int i = 0; i < answers.length; i++) {
+    myMap[answers[i]] = (myMap[answers[i]] ?? 0) + 1;
+  }
+
+  //for this example [2,2,2,2,3]
+  //it will create a map like below :
+  //{2:4,3:1}
+  print(myMap);
+  int counter = 0;
+
+  myMap.forEach((key, value) {
+    double div = key / (value + 1);
+    int rounded = div.ceil();
+    counter += rounded + 1;
+    print(counter);
+  });
+  return counter;
 }
