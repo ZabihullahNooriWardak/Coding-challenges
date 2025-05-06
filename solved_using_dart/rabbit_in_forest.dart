@@ -195,9 +195,12 @@ int rabbit(List<int> answers) {
   int counter = 0;
 
   myMap.forEach((key, value) {
-    double div = key / (value + 1);
+    double div = value / (key);
     int rounded = div.ceil();
-    counter += rounded + 1;
+    print(counter);
+    counter += (rounded);
+    print(counter);
+    counter += 1;
     print(counter);
   });
   return counter;
