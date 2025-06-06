@@ -1,4 +1,12 @@
 // Node class
+
+void main() {
+  int x = 3;
+  int y = x;
+  x = 8;
+  print('tis is y vluae : $y');
+}
+
 class Node {
   int data;
   Node? next;
@@ -9,6 +17,17 @@ class Node {
 // Linked List class
 class LinkedList {
   Node? head;
+  void prepend(int data) {
+    Node newNode = Node(data);
+
+    if (head == null) {
+      head = newNode;
+      return;
+    }
+    Node previousHead = head!;
+    head = newNode;
+    head!.next = previousHead;
+  }
 
   // Append node at the end
   void append(int data) {
@@ -28,19 +47,9 @@ class LinkedList {
   void printList() {
     Node? current = head;
     while (current != null) {
-      stdout.write('${current.data} → ');
+      print('${current.data} → ');
       current = current.next;
     }
     print('null');
   }
-}
-
-import 'dart:io';
-
-void main() {
-  LinkedList list = LinkedList();
-  list.append(10);
-  list.append(20);
-  list.append(30);
-  list.printList(); // Output: 10 → 20 → 30 → null
 }
